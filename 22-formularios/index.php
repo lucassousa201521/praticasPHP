@@ -27,7 +27,17 @@ if(!$url = filter_input(INPUT_POST, "url", FILTER_VALIDATE_URL)):
 	endif;
 */
 // Sanitize
+$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+echo $nome."<br>";
+// ele limpa o caracter e mantem o importante ex. preencher com @#$@12 ele mantem só o 12
+$idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_SPECIAL_NUMBER_INT);
+echo $idade."<br>";
 
+$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_EMAIL);
+echo $email."<br>";
+
+$url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_URL);
+echo $url."<br>";
 
 // EXIBINDO MENSAGEM
 
@@ -37,8 +47,6 @@ if(!empty($erros)):
 	endforeach;
 else:
 	echo "Parabéns, seus dados estão corretos";
-
-endif;
 
 endif;
 
