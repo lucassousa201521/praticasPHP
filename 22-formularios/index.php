@@ -3,7 +3,7 @@
 
 <?php
 
-// VALIDÃÇÕES
+/*VALIDÃÇÕES
 if(isset($_POST['enviar-formulario'])):
 	$erros = array();
 	if(!$idade = filter_input(INPUT_POST, "idade", FILTER_VALIDATE_INT)):
@@ -25,6 +25,9 @@ if(!$ip = filter_input(INPUT_POST, "ip", FILTER_VALIDATE_IP)):
 if(!$url = filter_input(INPUT_POST, "url", FILTER_VALIDATE_URL)):
 		$erros[] = "URL invalida";
 	endif;
+*/
+// Sanitize
+
 
 // EXIBINDO MENSAGEM
 
@@ -41,10 +44,9 @@ endif;
 
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+	Nome: <input type="text" name="nome"><br><br>
 	Idade: <input type="text" name="idade"><br><br>
-	E-mail: <input type="email" name="email"><br><br>
-	Peso: <input type="peso" name="peso"><br><br>
-	IP: <input type="ip" name="ip"><br><br>
+	E-mail: <input type="email" name="email"><br><br>	
 	URL: <input type="url" name="url"><br><br>
 	<button type="submit" name="enviar-formulario"> Enviar </button><br>
 </form>
